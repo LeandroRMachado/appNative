@@ -8,6 +8,7 @@ import { ListHeader } from '../../ListHeader';
 import { ListDivider } from '../../components/ListDivider';
 
 import { styles } from './styles';
+import { Background } from '../../components/Background';
 
 export function Home() {
   const [category, setCategory] = useState('')
@@ -29,26 +30,14 @@ export function Home() {
       id: '2',
       guild: {
         id: '1',
-        name: 'Lendários',
+        name: 'Ranqueada',
         icon: null,
         owner: false
       },
       category: '1',
-      date: '04/03 às 20:40h',
-      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
-    },
-    {
-      id: '3',
-      guild: {
-        id: '1',
-        name: 'Lendários',
-        icon: null,
-        owner: false
-      },
-      category: '1',
-      date: '04/03 às 20:40h',
-      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
-    },
+      date: '04/03 às 23:40h',
+      description: 'Daqui a pouco tem duelo na Jungle'
+    }
   ]
 
   function handleCategorySelect(categoryId: string) {
@@ -61,7 +50,7 @@ export function Home() {
   }
 
   return(
-    <View style={styles.container} >
+    <Background >
       <View style={styles.header} >
         <Profile />
         <ButtonAdd />
@@ -91,6 +80,6 @@ export function Home() {
           />
         </View>
       </View>
-    </View>
+    </Background>
   )
 }
