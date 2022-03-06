@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { StatusBar } from 'react-native'
 
 export function StatusBarComponent() {
