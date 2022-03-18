@@ -1,21 +1,12 @@
 import { StyleSheet } from "react-native";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import { COLORS } from "../../theme";
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+
 
 export const styles = StyleSheet.create({
-
-  header: {
-    width: '100%',
-    paddingHorizontal: 24,
-    flexDirection:'row',
-    justifyContent: 'space-between',
-    marginTop: getStatusBarHeight() + 26,
-    marginBottom: 42,
-  },
-  content: {
-    marginTop: 42
-  },
-  matches: {
-    marginTop: 24,
-    marginLeft: 24
+  container: {
+    flex: 1,
+    backgroundColor:COLORS.BLACK_SECONDARY,
+    paddingTop: getStatusBarHeight() + 17
   }
 })

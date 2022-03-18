@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "gameplay",
-    "slug": "gameplay",
+    "name": "nlwheatapp",
+    "slug": "nlwheatapp",
+    "scheme": "nlwheatapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#2d1e80"
+      "backgroundColor": "#121214"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

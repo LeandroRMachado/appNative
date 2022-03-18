@@ -1,52 +1,28 @@
-import React, { ReactNode } from 'react';
-import { styles } from './styles';
-import { LinearGradient } from 'expo-linear-gradient'
-import { theme } from '../../global/styles/theme';
-import { BorderlessButton } from 'react-native-gesture-handler'
-import { Feather } from '@expo/vector-icons'
-import { Text, View} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React from "react";
+import { Text, View, TouchableOpacity } from "react-native";
 
-type Props = {
-  title: string,
-  action?: ReactNode,
-}
+import { UserPhoto } from "../UserPhoto";
+import { styles } from "./styles";
 
-export function Header ({ title, action }: Props) {
-  const { secondary100, secondary40, heading } = theme.colors
+import LogoSvg from "../../assets/logo.svg"
 
-  const navigation = useNavigation()
-
-  function handleGoBack() {
-    navigation.goBack()
-  }
-
+export function Header () {
   return (
-    <LinearGradient 
-      colors={[secondary100, secondary40]}
-      style={styles.container} 
-    >
-      <BorderlessButton onPress={handleGoBack} >
-        <Feather
-          name="arrow-left"
-          size={24}
-          color={heading}
+    <View style={styles.container} >
+      <LogoSvg />
+
+      <View style={styles.logoutButton} >
+        <TouchableOpacity>
+          <Text style={styles.logoutText}>Sair</Text>
+        </TouchableOpacity>
+
+        <UserPhoto 
+        imageUri='https://github.com/LeandroRMachado.png'
+        //  sizes='SMALL'
         />
-      </BorderlessButton>
-
-      <Text style={styles.title} >
-        { title }
-      </Text>
-
-      {
-        action
-        ?
-        <View>
-          { action }
-        </View>
-        :
-        <View style={{ width: 24 }} />
-      }
-    </LinearGradient>
+      </View>
+      
+    </View>
   )
+  
 }

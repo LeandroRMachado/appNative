@@ -1,29 +1,30 @@
-import React from 'react'
-import { useFonts } from 'expo-font'
-import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter'
-import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani'
-import  AppLoading  from "expo-app-loading"
+import React from 'react';
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_700Bold
+} from '@expo-google-fonts/roboto'
+import AppLoading from 'expo-app-loading';
 
-import { Routes } from './src/routes'
-import { StatusBarComponent } from './src/components/StatusBarComponent'
-import { Background } from './src/components/Background'
+import { StatusBarHeader } from './src/components/StatusBarHeader';
+import { Home } from './src/screens/Home';
+import { AuthProvider } from './src/hooks/auth';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_500Medium,
-    Rajdhani_500Medium,
-    Rajdhani_700Bold
+    Roboto_400Regular,
+    Roboto_700Bold
   })
 
   if (!fontsLoaded) {
     return <AppLoading />
   }
 
-  return(
-    <Background>
-     <StatusBarComponent />
-     <Routes />
-    </Background>
-  )
+  return (
+    <AuthProvider>
+     <StatusBarHeader />
+     <Home/>
+    </AuthProvider>
+  );
 }
+
